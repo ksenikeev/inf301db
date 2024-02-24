@@ -1,8 +1,10 @@
 package ru.itis.inf301.db.ui;
 
+import ru.itis.inf301.db.model.RecordData;
 import ru.itis.inf301.db.service.IncomeService;
 import ru.itis.inf301.db.service.SpendingService;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -48,7 +50,14 @@ public class UserMenu {
     // Кузнецов
     private void showAllIncomeSum() {};
     // Кашапов
-    private void showAllSpendingSum() {};
+    private void showAllSpendingSum() {
+        List<RecordData> list = spendingService.getSpending().getSpending();
+        float sum = 0;
+        for(RecordData data: list) {
+            sum += data.getSum();
+        }
+        System.out.println("Общая сумма расходов: " + sum);
+    }
     // Снигирев
     private void addIncome() {};
     // Ахмадуллина
