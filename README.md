@@ -40,3 +40,17 @@
 1. Два файла: income.json, spending.json
 2. Считываем данные из файлов при старте программы
 3. При изменении - перезаписываем
+
+
+## 
+ObjectMapper
+
+readValue
+writeValue
+
+##
+```
+SimpleDateFormat("yyyy-MM-dd HH:mm")
+.format   Date -> String
+.parce String -> Date
+```

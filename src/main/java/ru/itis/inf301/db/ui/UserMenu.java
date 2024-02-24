@@ -29,6 +29,7 @@ public class UserMenu {
         start();
     }
 
+    // Галеева
     private void start() {
         while (true) {
 

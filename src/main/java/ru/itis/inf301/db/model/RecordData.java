@@ -1,8 +1,12 @@
 package ru.itis.inf301.db.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class RecordData {
+    @JsonFormat
+            (shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm")
     private Date date;
     private Float sum;
     private IncomeCategory category;
