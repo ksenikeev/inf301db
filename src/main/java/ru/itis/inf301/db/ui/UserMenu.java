@@ -1,6 +1,6 @@
 package ru.itis.inf301.db.ui;
 
-import ru.itis.inf301.db.service.IncomeService;
+import ru.itis.inf301.db.service.IIncomeService;
 import ru.itis.inf301.db.service.SpendingService;
 
 import java.util.Scanner;
@@ -20,7 +20,7 @@ public class UserMenu {
 
     private Scanner scanner;
 
-    private IncomeService incomeService;
+    private IIncomeService incomeService;
     private SpendingService spendingService;
 
     public UserMenu() {
