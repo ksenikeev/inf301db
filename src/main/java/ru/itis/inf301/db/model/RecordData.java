@@ -5,7 +5,7 @@ import java.util.Date;
 public class RecordData {
     private Date date;
     private Float sum;
-    private IncomeCategory category;
+    private SpendingCategory category;
     private String description;
 
     public Date getDate() {
@@ -24,11 +24,11 @@ public class RecordData {
         this.sum = sum;
     }
 
-    public IncomeCategory getCategory() {
+    public SpendingCategory getCategory() {
         return category;
     }
 
-    public void setCategory(IncomeCategory category) {
+    public void setCategory(SpendingCategory category) {
         this.category = category;
     }
 

@@ -2,12 +2,13 @@ package ru.itis.inf301.db.service;
 
 import ru.itis.inf301.db.model.Income;
 import ru.itis.inf301.db.model.RecordData;
+import ru.itis.inf301.db.model.Spending;
 
 import java.util.List;
 
 public interface SpendingService {
 
-    Income getSpending();
+    Spending getSpending();
     //Воропаев
     void addSpending(String date, Float sum, int categoryCode, String description);
     //Сафарова
