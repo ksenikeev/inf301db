@@ -10,26 +10,20 @@ import java.util.List;
 public class WorkWithSpending implements SpendingService{
 
     private Spending spendings;
-
-    public WorkWithSpending(){
-        spendings = new Spending();
-    }
-
-    public WorkWithSpending(RecordData record){
-        this();
-        List<RecordData> list = new ArrayList<>();
-        list.add(record);
-        spendings.setSpending(list);
-    }
+    private SpendingRepository repository;
 
     public WorkWithSpending(SpendingRepository repository){
         spendings = repository.load();
+        this.repository = repository;
     }
 
     public Spending getSpending() {
         return spendings;
     }
 
+    public void updateFile(){
+        repository.save(spendings);
+    }
 
     public void addSpending(String date, Float sum, int categoryCode, String description) {
 
