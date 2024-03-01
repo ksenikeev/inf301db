@@ -1,8 +1,10 @@
 package ru.itis.inf301.db.ui;
 
+import ru.itis.inf301.db.model.RecordData;
 import ru.itis.inf301.db.service.IncomeService;
 import ru.itis.inf301.db.service.SpendingService;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -36,11 +38,28 @@ public class UserMenu {
     }
 
     // Баранов
-    private void showAllIncome() {};
+    private void showAllIncome() {
+        List<RecordData> incomes  = incomeService.getIncome().getIncome();
+        for (int i = 0; i < incomes.size(); i++) {
+            RecordData inc = incomes.get(i);
+            System.out.println("Date: " + inc.getDate()+ "\nSum: "+  inc.getSum()+"\nCategory: "+ inc.getCategory() + "\nDescription: " +  inc.getDescription());
+        }
+    };
     // Фаварисова
     private void showAllSpending() {};
     //  Баранов
-    private void showAllIncomeByPeriod() {};
+    private void showAllIncomeByPeriod() {
+        scanner = new Scanner(System.in);
+        System.out.println("Введите начало периода по формату yyyy-MM-dd HH:mm:  ");
+        String beg = scanner.nextLine();
+        System.out.println("Введите конец периода по формату yyyy-MM-dd HH:mm:  ");
+        String end = scanner.nextLine();
+        List<RecordData> incomesByPeriod  = incomeService.getIncomeByPeriod(beg, end);
+        for (int i = 0; i < incomesByPeriod.size(); i++) {
+            RecordData inc = incomesByPeriod.get(i);
+            System.out.println("Date: " + inc.getDate()+ "\nSum: "+  inc.getSum()+"\nCategory: "+ inc.getCategory() + "\nDescription: " +  inc.getDescription());
+        }
+    };
     //  Фаварисова
     private void showAllByPeriod() {};
     // Гарифуллина
