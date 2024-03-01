@@ -44,7 +44,15 @@ public class UserMenu {
     //  Фаварисова
     private void showAllByPeriod() {};
     // Гарифуллина
-    private void showBalance() {};
+    private void showBalance() {
+        System.out.println("Введите дату начала в формате (yyyy-MM-dd HH:mm) : ");
+        String dateFrom = scanner.nextLine();
+        System.out.println("Введите дату конца в формате (yyyy-MM-dd HH:mm) : ");
+        String dateTo = scanner.nextLine();
+        float sumIncome = incomeService.getSumIncomeByPeriod(dateFrom, dateTo);
+        float sumSpending = spendingService.getSumSpendingByPeriod(dateFrom, dateTo);
+        System.out.println("Баланс за период (доходы - расходы) (" + dateFrom + " - " + dateTo + ") :" + (sumIncome - sumSpending));
+    };
     // Кузнецов
     private void showAllIncomeSum() {};
     // Кашапов
