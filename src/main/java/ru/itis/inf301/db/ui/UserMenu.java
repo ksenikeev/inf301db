@@ -80,6 +80,7 @@ public class UserMenu {
             System.out.println();
         }
         System.out.println("Введите описание дохода: ");
+        scanner.nextLine();
         String description = scanner.nextLine();
 
         incomeService.addIncome(date, sum, choice, description);
