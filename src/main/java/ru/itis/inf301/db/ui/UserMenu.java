@@ -52,5 +52,28 @@ public class UserMenu {
     // Снигирев
     private void addIncome() {};
     // Ахмадуллина
-    private void addSpending() {};
+    private void addSpending() {
+        System.out.println("set year: ");
+        String date = scanner.next() + "-";
+        System.out.println("month (in numerous format): ");
+        date += scanner.next() + " ";
+        System.out.println("day: ");
+        date += scanner.next() + " ";
+        System.out.println("hours: ");
+        date += scanner.next() + ":";
+        System.out.println("minutes: ");
+        date += scanner.next();
+
+        System.out.println("enter sum:");
+        float sum = scanner.nextFloat();
+
+        System.out.println("enter the code for your category: \nMarket - 1\nTransport - 2\nService - 3\nFun - 4\nCommunal - 5");
+        int category = scanner.nextInt();
+
+        System.out.println("add description:");
+        String descr = scanner.nextLine();
+
+//        IncomeRealization incomeRealization = new IncomeRealization();
+//        incomeRealization.addIncome(date, sum, category, descr);
+    };
 }
