@@ -26,13 +26,13 @@ public class IncomeRealization implements IncomeService {
 
     @Override
     public void addIncome(String date, Float sum, int categoryCode, String description) {
-        
+ 
         List<RecordData> list = getIncome().getIncome();
         Date data;
         try {
             data = new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(date);
         } catch (ParseException e) {
-            System.out.println("Некорректное значение даты");
+            System.out.println("incorrect date");
             return;
         }
         RecordData recordData = new RecordData();
