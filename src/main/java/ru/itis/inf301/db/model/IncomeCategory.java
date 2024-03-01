@@ -1,6 +1,6 @@
 package ru.itis.inf301.db.model;
 
-public enum IncomeCategory {
+public enum IncomeCategory{
     /** Зарплата */
     Salary(1),
     /** Стипендия */

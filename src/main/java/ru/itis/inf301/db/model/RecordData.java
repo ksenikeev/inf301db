@@ -39,4 +39,10 @@ public class RecordData {
     public void setDescription(String description) {
         this.description = description;
     }
+    public String toString() {
+        return "Date: " + date + "\n" +
+                "Category: " + category + "\n" +
+                "Sum: " + String.format("%.2f", sum) + " rub" + "\n" +
+                "Description: " + description + "\n";
+    }
 }
