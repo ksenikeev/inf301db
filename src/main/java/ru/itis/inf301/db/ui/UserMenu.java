@@ -73,7 +73,7 @@ public class UserMenu {
         System.out.println("add description:");
         String descr = scanner.nextLine();
 
-//        IncomeRealization incomeRealization = new IncomeRealization();
-//        incomeRealization.addIncome(date, sum, category, descr);
+        IncomeRealization incomeRealization = new IncomeRealization();
+        incomeRealization.addIncome(date, sum, category, descr);
     };
 }
