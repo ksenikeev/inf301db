@@ -1,8 +1,10 @@
 package ru.itis.inf301.db.ui;
 
+import ru.itis.inf301.db.model.RecordData;
 import ru.itis.inf301.db.service.IncomeService;
 import ru.itis.inf301.db.service.SpendingService;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -38,11 +40,27 @@ public class UserMenu {
     // Баранов
     private void showAllIncome() {};
     // Фаварисова
-    private void showAllSpending() {};
+    private void showAllSpending() {
+        List<RecordData> allSpending = spendingService.getSpending().getSpending();
+        for(RecordData rd: allSpending){
+            System.out.println("Дата: " + rd.getDate() + ", сумма: " + rd.getSum()
+                    + ", категория: " + rd.getCategory() +  ", описание: " + rd.getDescription());
+        }
+    };
     //  Баранов
     private void showAllIncomeByPeriod() {};
     //  Фаварисова
-    private void showAllByPeriod() {};
+    private void showAllSpendingByPeriod() {
+        scanner = new Scanner("Введите начало периода в формате 'yyyy-MM-dd HH:mm': ");
+        String dateFrom = scanner.nextLine();
+        scanner = new Scanner("Введите конец периода в формате 'yyyy-MM-dd HH:mm': ");
+        String dateTo = scanner.nextLine();
+        List<RecordData> SpendingByPeriod = spendingService.getSpendingByPeriod(dateFrom, dateTo);
+        for(RecordData rd: SpendingByPeriod){
+            System.out.println("Дата: " + rd.getDate() + ", сумма: " + rd.getSum()
+                    + ", категория: " + rd.getCategory() +  ", описание: " + rd.getDescription());
+        }
+    };
     // Гарифуллина
     private void showBalance() {};
     // Кузнецов
