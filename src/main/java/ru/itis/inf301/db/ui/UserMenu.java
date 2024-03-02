@@ -2,7 +2,9 @@ package ru.itis.inf301.db.ui;
 
 import ru.itis.inf301.db.service.IncomeService;
 import ru.itis.inf301.db.service.SpendingService;
+import ru.itis.inf301.db.model.RecordData;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -46,7 +48,14 @@ public class UserMenu {
     // Гарифуллина
     private void showBalance() {};
     // Кузнецов
-    private void showAllIncomeSum() {};
+    private void showAllIncomeSum() {
+        List<RecordData> allIncome= incomeService.getIncome().getIncome();
+        long summAllIncome = 0;
+        for (int i = 0; i < allIncome.size(); i++){
+            summAllIncome += allIncome.get(i).getSum();
+        }
+        System.out.println(summAllIncome);
+    };
     // Кашапов
     private void showAllSpendingSum() {};
     // Снигирев
