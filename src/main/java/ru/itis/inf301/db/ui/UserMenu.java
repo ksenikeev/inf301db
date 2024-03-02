@@ -2,7 +2,7 @@ package ru.itis.inf301.db.ui;
 
 import ru.itis.inf301.db.service.IncomeService;
 import ru.itis.inf301.db.service.SpendingService;
-
+import ru.itis.inf301.db.service.IncomeRealization;
 import java.util.Scanner;
 
 /**
@@ -54,15 +54,66 @@ public class UserMenu {
     // Ахмадуллина
     private void addSpending() {
         System.out.println("set year: ");
-        String date = scanner.next() + "-";
+        String date = "";
+        while (true) {
+            int d = scanner.nextInt();
+            if (d >= 1000) {
+                date += d + "-";
+                break;
+            }
+        }
         System.out.println("month (in numerous format): ");
-        date += scanner.next() + " ";
+        while (true) {
+            String d = scanner.next();
+            if (Integer.parseInt(d) > 0 && Integer.parseInt(d) <= 12) {
+                if (d.length() == 1) {
+                    date += "0" + d + "-";
+                }
+                else {
+                    date += d + "-";
+                }
+                break;
+            }
+        }
         System.out.println("day: ");
-        date += scanner.next() + " ";
+        while (true) {
+            String d = scanner.next();
+            if (Integer.parseInt(d) > 0 && Integer.parseInt(d) <= 31) {
+                if (d.length() == 1) {
+                    date += "0" + d + " ";
+                }
+                else {
+                    date += d + " ";
+                }
+                break;
+            }
+        }
         System.out.println("hours: ");
-        date += scanner.next() + ":";
+        while (true) {
+            String d = scanner.next();
+            if (Integer.parseInt(d) > 0 && Integer.parseInt(d) <= 31) {
+                if (d.length() == 1) {
+                    date += "0" + d + ":";
+                }
+                else {
+                    date += d + ":";
+                }
+                break;
+            }
+        }
         System.out.println("minutes: ");
-        date += scanner.next();
+        while (true) {
+            String d = scanner.next();
+            if (Integer.parseInt(d) > 0 && Integer.parseInt(d) <= 31) {
+                if (d.length() == 1) {
+                    date += "0" + d;
+                }
+                else {
+                    date += d;
+                }
+                break;
+            }
+        }
 
         System.out.println("enter sum:");
         float sum = scanner.nextFloat();
